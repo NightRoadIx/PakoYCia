@@ -2,13 +2,15 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private int count;
         // Get the color of button in mainpage
-        Color original;
+        Color original; 
         
         public MainPage()
         {
             InitializeComponent();
+            count = 0;
+            original = CounterBtn.BackgroundColor;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -18,7 +20,7 @@
 
             if (count == 1)
             {
-                original = (Color)sender;
+                //original = (Color)sender;
                 CounterBtn.Text = $"Me tocaste {count} vez";
             }
             else
@@ -36,9 +38,16 @@
         {
             count = 0;
             CounterBtn.Text = "Tócame de nuevo, estoy list@";
+            CounterBtn.BackgroundColor = original;
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
-        
+
+        private void EnCambio(object sender, EventArgs e)
+        {
+            Saludo.Text = TextBox1.Text;
+        }
+
+
     }
 
 }

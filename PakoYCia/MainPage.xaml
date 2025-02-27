@@ -14,6 +14,7 @@
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
+                x:Name="Saludo"
                 Text="¡Hola puerco!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
@@ -37,8 +38,15 @@
                 SemanticProperties.Hint="Resetea el contador"
                 Clicked="OnResetClicked"
                 HorizontalOptions="Fill" />
-
-        </VerticalStackLayout>
+            
+            <!-- Caja de Texto -->
+                <Entry
+                x:Name="TextBox1"
+                Placeholder="Aquí ingrésamelo"
+                TextChanged="EnCambio"
+                />
+        
+            </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
